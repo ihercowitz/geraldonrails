@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  idade: 1
+  cpf: MyString
+  prontuario: MyString
+  remedios: MyString
+  consultas: MyString
+
+two:
+  nome: MyString
+  idade: 1
+  cpf: MyString
+  prontuario: MyString
+  remedios: MyString
+  consultas: MyString

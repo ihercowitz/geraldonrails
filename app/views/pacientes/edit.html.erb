@@ -1,0 +1,36 @@
+<h1>Editing paciente</h1>
+
+<% form_for(@paciente) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :idade %><br />
+    <%= f.text_field :idade %>
+  </p>
+  <p>
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf %>
+  </p>
+  <p>
+    <%= f.label :prontuario %><br />
+    <%= f.text_field :prontuario %>
+  </p>
+  <p>
+    <%= f.label :remedios %><br />
+    <%= f.text_field :remedios %>
+  </p>
+  <p>
+    <%= f.label :consultas %><br />
+    <%= f.text_field :consultas %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @paciente %> |
+<%= link_to 'Back', pacientes_path %>
