@@ -11,16 +11,24 @@ class PacientesController < ApplicationController
     end
   end
 
-  # GET /pacientes/search?cpf=99999999999
-  def search
-    @paciente = Paciente.find(params[:cpf])
+  def search_cpf
+    @pacientes = Paciente.find(:all, :conditions=> 'cpf = '+params[:cpf])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @paciente }
+      format.html { render :action => "index" }
+      format.xml { render :xml => @pacientes }
     end
-
   end
+
+  def search_nome
+    @pacientes = Paciente.find(:all, :conditions=> 'nome like \'%'+params[:nome]+'%\'')
+
+    respond_to do |format|
+      format.html { render :action => "index" }
+      format.xml { render :xml => @pacientes }
+    end
+  end
+
 
   # GET /pacientes/1
   # GET /pacientes/1.xml
@@ -93,7 +101,6 @@ class PacientesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
 
 
 end

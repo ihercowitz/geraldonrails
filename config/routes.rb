@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.search '/search_cpf/:cpf', :controller => 'pacientes', :action=>'search_cpf'
+  map.search '/search_cpf/:cpf/:format', :controller => 'pacientes', :action=>'search_cpf'
+
+  map.search '/search_nome/:nome', :controller => 'pacientes', :action=>'search_nome'
+  map.search '/search_nome/:nome/:format', :controller => 'pacientes', :action=>'search_nome'
+
+
   map.resources :pacientes
   map.resources :buscar
 
@@ -42,6 +50,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
