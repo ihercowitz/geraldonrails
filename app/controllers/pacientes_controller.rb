@@ -21,7 +21,7 @@ class PacientesController < ApplicationController
   end
 
   def search_nome
-    @pacientes = Paciente.find(:all, :conditions=> 'nome like \'%'+params[:nome]+'%\'')
+    @pacientes = Paciente.find(:all, :conditions=> 'lower(nome) like lower(\'%'+params[:nome]+'%\')')
 
     respond_to do |format|
       format.html { render :action => "index" }
