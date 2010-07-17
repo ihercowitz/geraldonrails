@@ -12,7 +12,7 @@ class PacientesController < ApplicationController
   end
 
   def search_cpf
-    @pacientes = Paciente.find(:all, :conditions=> 'cpf = '+params[:cpf])
+    @pacientes = Paciente.find(:all, :conditions=> 'cpf like \''+params[:cpf]+'\'')
 
     respond_to do |format|
       format.html { render :action => "index" }
